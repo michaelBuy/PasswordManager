@@ -28,122 +28,146 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyPasswordManager));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuNewDatabase = new System.Windows.Forms.ToolStripMenuItem();
-            this.oUvrieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fermerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.enregistrerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verrouillerLespaceDeTravailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.entréeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajouterUneEntréeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copierLeNomUtilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copierLeMotDePasseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuNewDatabase = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuOpenDatabase = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCloseDatabase = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSaveDatabase = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLockDatabase = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuExitApplication = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuEntry = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAddEntry = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCopyUsername = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCopyPassword = new System.Windows.Forms.ToolStripMenuItem();
             this.DtgEntries = new System.Windows.Forms.DataGridView();
+            this.contextMenuDtg = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuCopyUsername = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuCopyPassword = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuAddEntry = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextEditEntry = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuDeleteEntry = new System.Windows.Forms.ToolStripMenuItem();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuNotify = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuLockDatabase = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DtgEntries)).BeginInit();
+            this.contextMenuDtg.SuspendLayout();
+            this.contextMenuNotify.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
             // 
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fichierToolStripMenuItem,
-            this.entréeToolStripMenuItem});
+            this.menuFile,
+            this.menuEntry});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(778, 33);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
-            // fichierToolStripMenuItem
+            // menuFile
             // 
-            this.fichierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuNewDatabase,
-            this.oUvrieToolStripMenuItem,
-            this.fermerToolStripMenuItem,
-            this.enregistrerToolStripMenuItem,
-            this.verrouillerLespaceDeTravailToolStripMenuItem,
-            this.quitterToolStripMenuItem});
-            this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(78, 29);
-            this.fichierToolStripMenuItem.Text = "Fichier";
+            this.menuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuNewDatabase,
+            this.menuOpenDatabase,
+            this.menuCloseDatabase,
+            this.menuSaveDatabase,
+            this.menuLockDatabase,
+            this.menuExitApplication});
+            this.menuFile.Name = "menuFile";
+            this.menuFile.Size = new System.Drawing.Size(78, 29);
+            this.menuFile.Text = "Fichier";
+            this.menuFile.DropDownOpening += new System.EventHandler(this.MenufileOpening);
             // 
-            // MenuNewDatabase
+            // menuNewDatabase
             // 
-            this.MenuNewDatabase.Name = "MenuNewDatabase";
-            this.MenuNewDatabase.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.MenuNewDatabase.Size = new System.Drawing.Size(396, 34);
-            this.MenuNewDatabase.Text = "Nouveau";
-            this.MenuNewDatabase.Click += new System.EventHandler(this.NewDatabase);
+            this.menuNewDatabase.Name = "menuNewDatabase";
+            this.menuNewDatabase.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.menuNewDatabase.Size = new System.Drawing.Size(396, 34);
+            this.menuNewDatabase.Text = "Nouveau";
+            this.menuNewDatabase.Click += new System.EventHandler(this.NewDatabase);
             // 
-            // oUvrieToolStripMenuItem
+            // menuOpenDatabase
             // 
-            this.oUvrieToolStripMenuItem.Name = "oUvrieToolStripMenuItem";
-            this.oUvrieToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.oUvrieToolStripMenuItem.Size = new System.Drawing.Size(396, 34);
-            this.oUvrieToolStripMenuItem.Text = "Ouvrir";
+            this.menuOpenDatabase.Name = "menuOpenDatabase";
+            this.menuOpenDatabase.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.menuOpenDatabase.Size = new System.Drawing.Size(396, 34);
+            this.menuOpenDatabase.Text = "Ouvrir";
+            this.menuOpenDatabase.Click += new System.EventHandler(this.OpenDatabase);
             // 
-            // fermerToolStripMenuItem
+            // menuCloseDatabase
             // 
-            this.fermerToolStripMenuItem.Name = "fermerToolStripMenuItem";
-            this.fermerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.fermerToolStripMenuItem.Size = new System.Drawing.Size(396, 34);
-            this.fermerToolStripMenuItem.Text = "Fermer";
+            this.menuCloseDatabase.Name = "menuCloseDatabase";
+            this.menuCloseDatabase.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
+            this.menuCloseDatabase.Size = new System.Drawing.Size(396, 34);
+            this.menuCloseDatabase.Text = "Fermer";
+            this.menuCloseDatabase.Click += new System.EventHandler(this.CloseDatabase);
             // 
-            // enregistrerToolStripMenuItem
+            // menuSaveDatabase
             // 
-            this.enregistrerToolStripMenuItem.Name = "enregistrerToolStripMenuItem";
-            this.enregistrerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(396, 34);
-            this.enregistrerToolStripMenuItem.Text = "Enregistrer";
+            this.menuSaveDatabase.Name = "menuSaveDatabase";
+            this.menuSaveDatabase.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.menuSaveDatabase.Size = new System.Drawing.Size(396, 34);
+            this.menuSaveDatabase.Text = "Enregistrer";
+            this.menuSaveDatabase.Click += new System.EventHandler(this.SaveDatabase);
             // 
-            // verrouillerLespaceDeTravailToolStripMenuItem
+            // menuLockDatabase
             // 
-            this.verrouillerLespaceDeTravailToolStripMenuItem.Name = "verrouillerLespaceDeTravailToolStripMenuItem";
-            this.verrouillerLespaceDeTravailToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.verrouillerLespaceDeTravailToolStripMenuItem.Size = new System.Drawing.Size(396, 34);
-            this.verrouillerLespaceDeTravailToolStripMenuItem.Text = "Verrouiller l\'espace de travail";
+            this.menuLockDatabase.Name = "menuLockDatabase";
+            this.menuLockDatabase.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.menuLockDatabase.Size = new System.Drawing.Size(396, 34);
+            this.menuLockDatabase.Text = "Verrouiller l\'espace de travail";
+            this.menuLockDatabase.Click += new System.EventHandler(this.LockDatabase);
             // 
-            // quitterToolStripMenuItem
+            // menuExitApplication
             // 
-            this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(396, 34);
-            this.quitterToolStripMenuItem.Text = "Quitter";
+            this.menuExitApplication.Name = "menuExitApplication";
+            this.menuExitApplication.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.menuExitApplication.Size = new System.Drawing.Size(396, 34);
+            this.menuExitApplication.Text = "Quitter";
+            this.menuExitApplication.Click += new System.EventHandler(this.ExitApplication);
             // 
-            // entréeToolStripMenuItem
+            // menuEntry
             // 
-            this.entréeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ajouterUneEntréeToolStripMenuItem,
-            this.copierLeNomUtilisateurToolStripMenuItem,
-            this.copierLeMotDePasseToolStripMenuItem});
-            this.entréeToolStripMenuItem.Name = "entréeToolStripMenuItem";
-            this.entréeToolStripMenuItem.Size = new System.Drawing.Size(77, 29);
-            this.entréeToolStripMenuItem.Text = "Entrée";
+            this.menuEntry.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuAddEntry,
+            this.menuCopyUsername,
+            this.menuCopyPassword});
+            this.menuEntry.Name = "menuEntry";
+            this.menuEntry.Size = new System.Drawing.Size(77, 29);
+            this.menuEntry.Text = "Entrée";
+            this.menuEntry.DropDownOpening += new System.EventHandler(this.MenuEntryOpening);
             // 
-            // ajouterUneEntréeToolStripMenuItem
+            // menuAddEntry
             // 
-            this.ajouterUneEntréeToolStripMenuItem.Name = "ajouterUneEntréeToolStripMenuItem";
-            this.ajouterUneEntréeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.ajouterUneEntréeToolStripMenuItem.Size = new System.Drawing.Size(383, 34);
-            this.ajouterUneEntréeToolStripMenuItem.Text = "Ajouter une entrée";
+            this.menuAddEntry.Name = "menuAddEntry";
+            this.menuAddEntry.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+            this.menuAddEntry.Size = new System.Drawing.Size(383, 34);
+            this.menuAddEntry.Text = "Ajouter une entrée";
+            this.menuAddEntry.Click += new System.EventHandler(this.AddEntry);
             // 
-            // copierLeNomUtilisateurToolStripMenuItem
+            // menuCopyUsername
             // 
-            this.copierLeNomUtilisateurToolStripMenuItem.Name = "copierLeNomUtilisateurToolStripMenuItem";
-            this.copierLeNomUtilisateurToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.copierLeNomUtilisateurToolStripMenuItem.Size = new System.Drawing.Size(383, 34);
-            this.copierLeNomUtilisateurToolStripMenuItem.Text = "Copier le nom d\'utilisateur";
+            this.menuCopyUsername.Name = "menuCopyUsername";
+            this.menuCopyUsername.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
+            this.menuCopyUsername.Size = new System.Drawing.Size(383, 34);
+            this.menuCopyUsername.Text = "Copier le nom d\'utilisateur";
+            this.menuCopyUsername.Click += new System.EventHandler(this.CopyUsername);
             // 
-            // copierLeMotDePasseToolStripMenuItem
+            // menuCopyPassword
             // 
-            this.copierLeMotDePasseToolStripMenuItem.Name = "copierLeMotDePasseToolStripMenuItem";
-            this.copierLeMotDePasseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copierLeMotDePasseToolStripMenuItem.Size = new System.Drawing.Size(383, 34);
-            this.copierLeMotDePasseToolStripMenuItem.Text = "Copier le mot de passe";
+            this.menuCopyPassword.Name = "menuCopyPassword";
+            this.menuCopyPassword.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.menuCopyPassword.Size = new System.Drawing.Size(383, 34);
+            this.menuCopyPassword.Text = "Copier le mot de passe";
+            this.menuCopyPassword.Click += new System.EventHandler(this.CopyPassword);
             // 
             // DtgEntries
             // 
@@ -153,6 +177,7 @@
             this.DtgEntries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DtgEntries.BackgroundColor = System.Drawing.Color.White;
             this.DtgEntries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DtgEntries.ContextMenuStrip = this.contextMenuDtg;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -164,6 +189,7 @@
             this.DtgEntries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DtgEntries.Location = new System.Drawing.Point(0, 33);
             this.DtgEntries.Name = "DtgEntries";
+            this.DtgEntries.ReadOnly = true;
             this.DtgEntries.RowHeadersWidth = 62;
             this.DtgEntries.RowTemplate.Height = 33;
             this.DtgEntries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -171,6 +197,84 @@
             this.DtgEntries.ShowEditingIcon = false;
             this.DtgEntries.Size = new System.Drawing.Size(778, 511);
             this.DtgEntries.TabIndex = 1;
+            this.DtgEntries.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DtgEntries_CellFormatting);
+            // 
+            // contextMenuDtg
+            // 
+            this.contextMenuDtg.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuDtg.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contextMenuCopyUsername,
+            this.contextMenuCopyPassword,
+            this.contextMenuAddEntry,
+            this.contextEditEntry,
+            this.contextMenuDeleteEntry});
+            this.contextMenuDtg.Name = "contextMenuDtg";
+            this.contextMenuDtg.Size = new System.Drawing.Size(293, 197);
+            // 
+            // contextMenuCopyUsername
+            // 
+            this.contextMenuCopyUsername.Name = "contextMenuCopyUsername";
+            this.contextMenuCopyUsername.Size = new System.Drawing.Size(292, 32);
+            this.contextMenuCopyUsername.Text = "Copier le nom d\'utilisateur";
+            this.contextMenuCopyUsername.Click += new System.EventHandler(this.CopyUsername);
+            // 
+            // contextMenuCopyPassword
+            // 
+            this.contextMenuCopyPassword.Name = "contextMenuCopyPassword";
+            this.contextMenuCopyPassword.Size = new System.Drawing.Size(292, 32);
+            this.contextMenuCopyPassword.Text = "Copier le mot de passe";
+            this.contextMenuCopyPassword.Click += new System.EventHandler(this.CopyPassword);
+            // 
+            // contextMenuAddEntry
+            // 
+            this.contextMenuAddEntry.Name = "contextMenuAddEntry";
+            this.contextMenuAddEntry.Size = new System.Drawing.Size(292, 32);
+            this.contextMenuAddEntry.Text = "Ajouter une entrée";
+            this.contextMenuAddEntry.Click += new System.EventHandler(this.AddEntry);
+            // 
+            // contextEditEntry
+            // 
+            this.contextEditEntry.Name = "contextEditEntry";
+            this.contextEditEntry.Size = new System.Drawing.Size(292, 32);
+            this.contextEditEntry.Text = "Modifier l\'entrée";
+            this.contextEditEntry.Click += new System.EventHandler(this.EditEntry);
+            // 
+            // contextMenuDeleteEntry
+            // 
+            this.contextMenuDeleteEntry.Name = "contextMenuDeleteEntry";
+            this.contextMenuDeleteEntry.Size = new System.Drawing.Size(292, 32);
+            this.contextMenuDeleteEntry.Text = "Supprimer l\'entrée";
+            this.contextMenuDeleteEntry.Click += new System.EventHandler(this.DeleteEntry);
+            // 
+            // notifyIcon
+            // 
+            this.notifyIcon.ContextMenuStrip = this.contextMenuNotify;
+            this.notifyIcon.Text = "MyPasswordManager";
+            this.notifyIcon.Visible = true;
+            // 
+            // contextMenuNotify
+            // 
+            this.contextMenuNotify.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuNotify.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contextMenuLockDatabase,
+            this.contextMenuExit});
+            this.contextMenuNotify.Name = "contextMenuNotify";
+            this.contextMenuNotify.Size = new System.Drawing.Size(308, 68);
+            this.contextMenuNotify.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuNotifyOpening);
+            // 
+            // contextMenuLockDatabase
+            // 
+            this.contextMenuLockDatabase.Name = "contextMenuLockDatabase";
+            this.contextMenuLockDatabase.Size = new System.Drawing.Size(307, 32);
+            this.contextMenuLockDatabase.Text = "Verrouiller l\'espace de travail";
+            this.contextMenuLockDatabase.Click += new System.EventHandler(this.LockDatabase);
+            // 
+            // contextMenuExit
+            // 
+            this.contextMenuExit.Name = "contextMenuExit";
+            this.contextMenuExit.Size = new System.Drawing.Size(307, 32);
+            this.contextMenuExit.Text = "Quitter";
+            this.contextMenuExit.Click += new System.EventHandler(this.ExitApplication);
             // 
             // MyPasswordManager
             // 
@@ -180,6 +284,7 @@
             this.ClientSize = new System.Drawing.Size(778, 544);
             this.Controls.Add(this.DtgEntries);
             this.Controls.Add(this.menuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MyPasswordManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -187,6 +292,8 @@
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DtgEntries)).EndInit();
+            this.contextMenuDtg.ResumeLayout(false);
+            this.contextMenuNotify.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,17 +302,28 @@
         #endregion
 
         private MenuStrip menuStrip;
-        private ToolStripMenuItem fichierToolStripMenuItem;
-        private ToolStripMenuItem MenuNewDatabase;
-        private ToolStripMenuItem oUvrieToolStripMenuItem;
-        private ToolStripMenuItem entréeToolStripMenuItem;
-        private ToolStripMenuItem fermerToolStripMenuItem;
-        private ToolStripMenuItem enregistrerToolStripMenuItem;
-        private ToolStripMenuItem verrouillerLespaceDeTravailToolStripMenuItem;
-        private ToolStripMenuItem quitterToolStripMenuItem;
-        private ToolStripMenuItem ajouterUneEntréeToolStripMenuItem;
-        private ToolStripMenuItem copierLeNomUtilisateurToolStripMenuItem;
-        private ToolStripMenuItem copierLeMotDePasseToolStripMenuItem;
+        private ToolStripMenuItem menuFile;
+        private ToolStripMenuItem menuNewDatabase;
+        private ToolStripMenuItem menuOpenDatabase;
+        private ToolStripMenuItem menuEntry;
+        private ToolStripMenuItem menuCloseDatabase;
+        private ToolStripMenuItem menuSaveDatabase;
+        private ToolStripMenuItem menuLockDatabase;
+        private ToolStripMenuItem menuExitApplication;
+        private ToolStripMenuItem menuAddEntry;
+        private ToolStripMenuItem menuCopyUsername;
+        private ToolStripMenuItem menuCopyPassword;
         private DataGridView DtgEntries;
+        private ContextMenuStrip contextMenuDtg;
+        private ToolStripMenuItem contextMenuCopyUsername;
+        private ToolStripMenuItem contextMenuCopyPassword;
+        private ToolStripMenuItem contextMenuAddEntry;
+        private ToolStripMenuItem contextEditEntry;
+        private ToolStripMenuItem contextMenuDeleteEntry;
+        private NotifyIcon notifyIcon;
+        private ContextMenuStrip contextMenuNotify;
+        private ToolStripMenuItem contextMenuLockDatabase;
+        private ToolStripMenuItem contextMenuExit;
+        //private ContextMenuStrip contextMenuStrip1;
     }
 }

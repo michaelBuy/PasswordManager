@@ -37,5 +37,25 @@ namespace PasswordManager
             tbxMasterPassword.UseSystemPasswordChar = !tbxMasterPassword.UseSystemPasswordChar;
             tbxRepeatMasterPassword.UseSystemPasswordChar = !tbxRepeatMasterPassword.UseSystemPasswordChar ;
         }
+
+        private void NewDatabaseForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxMasterPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

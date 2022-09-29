@@ -36,6 +36,11 @@ namespace PasswordManager.Helper
             return comparer.Compare(hashOfInput, hash) == 0;
         }
 
+        internal static string Encrypt()
+        {
+            throw new NotImplementedException();
+        }
+
         private static void CreateAsmKeys(string keyName)
         {
             cspp.KeyContainerName = keyName;

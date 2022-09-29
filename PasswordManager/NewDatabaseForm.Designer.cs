@@ -32,10 +32,10 @@
             this.BtnAccept = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tbxRepeatMasterPassword = new System.Windows.Forms.TextBox();
-            this.tbxMasterPassword = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tbxMasterPassword = new System.Windows.Forms.TextBox();
             this.btnTogglePasswordChar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +48,7 @@
             this.BtnCancel.TabIndex = 0;
             this.BtnCancel.Text = "Annuler";
             this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // BtnAccept
             // 
@@ -88,25 +89,6 @@
             this.tbxRepeatMasterPassword.TabIndex = 0;
             this.tbxRepeatMasterPassword.UseSystemPasswordChar = true;
             // 
-            // tbxMasterPassword
-            // 
-            this.tbxMasterPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxMasterPassword.Location = new System.Drawing.Point(220, 16);
-            this.tbxMasterPassword.Name = "tbxMasterPassword";
-            this.tbxMasterPassword.Size = new System.Drawing.Size(243, 31);
-            this.tbxMasterPassword.TabIndex = 1;
-            this.tbxMasterPassword.UseSystemPasswordChar = true;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Mot de passe maître :";
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -116,6 +98,16 @@
             this.label2.Size = new System.Drawing.Size(211, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Confirmation :";
+            // 
+            // tbxMasterPassword
+            // 
+            this.tbxMasterPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxMasterPassword.Location = new System.Drawing.Point(220, 16);
+            this.tbxMasterPassword.Name = "tbxMasterPassword";
+            this.tbxMasterPassword.Size = new System.Drawing.Size(243, 31);
+            this.tbxMasterPassword.TabIndex = 1;
+            this.tbxMasterPassword.UseSystemPasswordChar = true;
+            this.tbxMasterPassword.TextChanged += new System.EventHandler(this.tbxMasterPassword_TextChanged);
             // 
             // btnTogglePasswordChar
             // 
@@ -127,6 +119,17 @@
             this.btnTogglePasswordChar.Text = "***";
             this.btnTogglePasswordChar.UseVisualStyleBackColor = true;
             this.btnTogglePasswordChar.Click += new System.EventHandler(this.TogglePasswordChar);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(211, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Mot de passe maître :";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // NewDatabaseForm
             // 
@@ -143,7 +146,7 @@
             this.Name = "NewDatabaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Créer un mot de passe maître";
-           // this.Load += new System.EventHandler(this.NewDatabaseForm_Load);
+            this.Load += new System.EventHandler(this.NewDatabaseForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -156,9 +159,9 @@
         private Button BtnAccept;
         private TableLayoutPanel tableLayoutPanel1;
         private TextBox tbxRepeatMasterPassword;
+        private Label label2;
         private TextBox tbxMasterPassword;
         private Label label1;
-        private Label label2;
         private Button btnTogglePasswordChar;
     }
 }

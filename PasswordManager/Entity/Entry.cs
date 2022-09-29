@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PasswordManager.Entity
 {
-    public class Entry
+    public class Entry : ICloneable
     {
         private string _Uuid;
         [Browsable(false)]
@@ -54,11 +54,16 @@ namespace PasswordManager.Entity
 
         private DateTime _CreateDate;
 
-        [DisplayName("Dtae de création")]
+        [DisplayName("Date de création")]
         public DateTime CreateDate
         {
             get => _CreateDate;
             set => _CreateDate = value;
+        }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
         }
     }
 }

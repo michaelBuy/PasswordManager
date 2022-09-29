@@ -10,12 +10,15 @@ namespace PasswordManager.Helper
 {
     public static class DatabaseHelper
     {
-        public static void SaveDatabase(Database database)
+        public static void SaveDatabase(string path, Database database)
         {
             var fileName = Guid.NewGuid().ToString() + ".tmp";
             var tempFilePath = Path.Combine(Path.GetTempPath(), fileName);
 
             File.WriteAllText(tempFilePath, JsonSerializer.Serialize(database));
+
+            Security.EncryptFile(database.Hash, tempFilePath, path); 
+
             File.Delete(tempFilePath);
         }
     }
