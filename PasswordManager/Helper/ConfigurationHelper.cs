@@ -48,7 +48,7 @@ namespace PasswordManager.Helper
 
             var json = File.ReadAllText(configFilepath);
 
-            return JsonSerializer.Deserialize<Configuration>(json);
+            return JsonSerializer.Deserialize<Configuration>(json)!;
 
             
         }
